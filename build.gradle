@@ -48,6 +48,8 @@ kotlin {
         }
     }
     
+    js()
+    
     sourceSets {
         commonMain {
             dependencies {
@@ -71,6 +73,17 @@ kotlin {
         jvmTest {
             dependencies {
                 implementation 'org.jetbrains.kotlin:kotlin-test-junit'
+            }
+        }
+        jsMain {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-stdlib-js'
+                implementation "org.jetbrains.kotlinx:kotlinx-io-js:$kotlinIoVersion"
+            }
+        }
+        jsTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-js'
             }
         }
     }

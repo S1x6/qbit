@@ -14,13 +14,7 @@ actual operator fun <K, V> IdentityHashMap<K, V>.set(key: K, value: V) {
     put(key, value)
 }
 
-actual typealias ConcurrentHashMap<K, V> = java.util.concurrent.ConcurrentHashMap<K, V>
-
 actual typealias KeySetView<K, V> = java.util.concurrent.ConcurrentHashMap.KeySetView<K, V>
-
-actual inline fun <K, V> ConcurrentHashMap<K, V>.getOrPut(key: K, defaultValue: () -> V): V {
-    return getOrPutImpl(key, defaultValue)
-}
 
 actual fun <K, V> KeySetView<K, V>.asSequence(): Sequence<K> {
    return asSequenceImpl()
